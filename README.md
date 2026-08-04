@@ -15,23 +15,27 @@ need to be online to see IBM Plex — it falls back to system fonts offline.)
 
 ## Deploy to GitHub Pages
 
-1. Create a repository and push these files to it:
+This repo is already committed on `main`. It deploys as a **user site** —
+repo name `xhuve.github.io`, served at the root URL.
+
+1. Create the repo and push. With the GitHub CLI (already authenticated):
 
    ```sh
-   git init
-   git add .
-   git commit -m "Add CV site"
-   git branch -M main
-   git remote add origin https://github.com/xhuve/<repo-name>.git
+   gh repo create xhuve.github.io --public --source=. --remote=origin --push
+   ```
+
+   Or, if you create `xhuve.github.io` on github.com by hand, just wire up the
+   remote and push:
+
+   ```sh
+   git remote add origin https://github.com/xhuve/xhuve.github.io.git
    git push -u origin main
    ```
 
-2. On GitHub: **Settings → Pages**. Under **Build and deployment**, set
-   **Source** to *Deploy from a branch*, pick **main** and the **/ (root)**
-   folder, then **Save**.
-
-3. Wait a minute, then your site is live at
-   `https://xhuve.github.io/<repo-name>/`.
+2. GitHub serves a `username.github.io` repo automatically from `main`. Give it
+   about a minute, then open **https://xhuve.github.io/**. If it isn't live yet,
+   go to **Settings → Pages** and set **Source** to *Deploy from a branch* →
+   **main** / **(root)**.
 
 ## Save as PDF
 
